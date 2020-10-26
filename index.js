@@ -59,5 +59,8 @@ document.getElementById("task1.9").onclick = function basics9() {
 }
 
 document.getElementById("task1.10").onclick = function basics10() {
-
+    let sum = prompt(`Введіть суму яку бажаєте інвестувати`);
+    const interest = 0.0042;
+    let monthIncome = ((sum * interest) * 2);
+    alert(`Якщо Ви заінвестуєте ` + sum + ` грн. Ваш дохід за два місяці складе ` + monthIncome + ` грн`);
 }
