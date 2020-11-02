@@ -16,5 +16,8 @@
   "parcelCleanPaths": [
     "dist",
     ".cache"
-  ]
+  ],
+  "dependencies": {
+    "jshint": "^2.12.0"
+  }
 }
