@@ -19,3 +19,8 @@ import {
     hw4
 } from "./js/hw4";
 hw4();
+
+import {
+    hw5
+} from "./js/hw5";
+hw5();

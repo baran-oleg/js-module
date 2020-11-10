@@ -644,9 +644,169 @@ var hw4 = function hw4() {
 
     alert(square(a, b));
   };
+
+  document.getElementById("task4.5").onclick = function basics35() {
+    var num = +prompt("\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u0431\u0443\u0434\u044C-\u044F\u043A\u0435 \u0447\u0438\u0441\u043B\u043E", '10');
+
+    function numPerfect(a) {
+      if (a === 0) {
+        return false;
+      }
+
+      var b = 0;
+
+      for (var i = 1; i < a; i++) {
+        if (a % i === 0) {
+          b += i;
+        }
+      }
+
+      return b === a;
+    }
+
+    alert("The number your enter is perfec: ".concat(numPerfect(num)));
+  };
+
+  document.getElementById("task4.6").onclick = function basics36() {
+    var startRange = +prompt("\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u043C\u0456\u043D\u0456\u043C\u0430\u043B\u044C\u043D\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u0456\u0430\u043F\u0430\u0437\u043E\u043D\u0443", '20');
+    var endRange = +prompt("\u0412\u0435\u0434\u0456\u0442\u044C \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0435 \u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u0456\u0430\u043F\u0430\u0437\u043E\u043D\u0443", '30');
+
+    function numPerfect(a) {
+      if (a === 0) {
+        return false;
+      }
+
+      var b = 0;
+
+      for (var i = 1; i < a; i++) {
+        if (a % i === 0) {
+          b += i;
+        }
+      }
+
+      return b === a;
+    }
+
+    function perfectNumInRange(min, max) {
+      var num = [];
+
+      for (var i = min; i < max; i++) {
+        if (numPerfect(i)) {
+          num.push(i);
+        }
+      }
+
+      return num;
+    }
+
+    alert("\u0423 \u0437\u0430\u0434\u0430\u043D\u043E\u043C\u0443 \u0434\u0456\u0430\u043F\u0430\u0437\u043E\u043D\u0456, \u0434\u043E\u0441\u043A\u043E\u043D\u0430\u043B\u0438\u043C\u0438 \u0447\u0438\u0441\u043B\u0430\u043C\u0438 \u0454: ".concat(perfectNumInRange(startRange, endRange)));
+  };
+
+  document.getElementById("task4.7").onclick = function basics37() {
+    function time() {
+      var time = new Date();
+      var a = time.getHours();
+      var b = time.getMinutes();
+      var c = time.getSeconds();
+      alert("\u041D\u0430\u043F\u0435\u0432\u043D\u0435 \u0443 \u0412\u0430\u0441 \u0437\u0430\u0440\u0430\u0437 \u043D\u0430 \u0433\u043E\u0434\u0438\u043D\u043D\u0438\u043A\u0443: ".concat(a, " : ").concat(b, " : ").concat(c));
+    }
+
+    time();
+  };
+
+  document.getElementById("task4.8").onclick = function basics38() {
+    var hours = +prompt("\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u0433\u043E\u0434\u0438\u043D\u0438", '12');
+    var minutes = +prompt("\u0432\u0432\u0435\u0434\u0456\u0442\u044C \u0445\u0432\u0438\u043B\u0438\u043D\u0438", '33');
+    var seconds = +prompt("\u0432\u0432\u0435\u0434\u0456\u0442\u044C \u0441\u0435\u043A\u0443\u043D\u0434\u0438", '33');
+
+    function totalSeconds(hh) {
+      var mm = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      var ss = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+      return hh * 3600 + mm * 60 + ss;
+    }
+
+    alert(totalSeconds(hours, minutes, seconds) + ' секунд');
+  };
+
+  document.getElementById("task4.9").onclick = function basics39() {
+    var num = +prompt("\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u0441\u0443\u043C\u0443 \u0441\u0435\u043A\u0443\u043D\u0434, \u0434\u043B\u044F \u043F\u0435\u0440\u0435\u0432\u0435\u0434\u0435\u043D\u043D\u044F \u0443 \u0433\u043E\u0434\u0438\u043D\u0443", '66666');
+
+    function time() {
+      var a = Math.floor(num / 60 / 60);
+      var b = Math.floor(num / 60 - a * 60);
+      var c = num % 60;
+      alert("".concat(a, "hh : ").concat(b, "mm : ").concat(c, "ss"));
+    }
+
+    time();
+  };
+
+  document.getElementById("task4.10").onclick = function basics40() {
+    var firstDate = prompt("\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u043F\u0435\u0440\u0448\u0443 \u0434\u0430\u0442\u0443 \u0443 \u0444\u043E\u0440\u043C\u0430\u0442\u0456 \u0433\u043E\u0434:\u0445\u0432:\u0441", "14, 20, 40").split(', ');
+    var secondDate = prompt("\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u0434\u0440\u0443\u0433\u0443 \u0434\u0430\u0442\u0443 \u0443 \u0444\u043E\u0440\u043C\u0430\u0442\u0456 \u0433\u043E\u0434:\u0445\u0432:\u0441", "23, 15, 33").split(', ');
+
+    function totalSeconds(hh) {
+      var mm = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      var ss = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+      return hh * 3600 + mm * 60 + Number(ss);
+    }
+
+    firstDate = totalSeconds(firstDate[0], firstDate[1], firstDate[2]);
+    secondDate = totalSeconds(secondDate[0], secondDate[1], secondDate[2]);
+    var newDate = firstDate - secondDate;
+
+    function time() {
+      var ss = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+      var a = Math.floor(ss / 60 / 60);
+      var b = Math.floor(ss / 60 - a * 60);
+      var c = ss % 60;
+      var formatString = [a.toString().padStart(2, "0"), b.toString().padStart(2, "0"), c.toString().padStart(2, "0")].join(":");
+      return formatString;
+    }
+
+    alert(time(newDate));
+  };
 };
 
 exports.hw4 = hw4;
+},{}],"js/hw5.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.hw5 = void 0;
+
+var hw5 = function hw5() {
+  document.getElementById("task5.1").onclick = function basics31() {
+    var car = {
+      producer: "Volvo",
+      model: "XC 60",
+      year: "2017",
+      speed: "120"
+    };
+
+    for (var key in car) {
+      alert(key);
+      alert(car[key]);
+    }
+
+    var distance = +prompt("\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u0442\u0440\u043E\u0442\u044F\u0436\u043D\u0456\u0441\u0442\u044C \u0432\u0430\u0448\u043E\u0433\u043E \u043C\u0430\u0440\u0448\u0440\u0443\u0442\u0443 \u0432 \u043A\u043C", '660');
+
+    var timeTrip = function timeTrip(a) {
+      var timeforDist = a / car.speed;
+      alert("".concat(timeforDist, " \u0433\u043E\u0434 \u043D\u0430 \u043F\u043E\u0434\u043E\u043B\u0430\u043D\u043D\u044F \u0432\u0456\u0434\u0441\u0442\u0430\u043D\u0456"));
+      var timePause = Math.floor(timeforDist / 4);
+      alert("".concat(timePause, " \u0440\u0430\u0437 \u0431\u0443\u0434\u0435\u043C\u043E \u0440\u043E\u0431\u0438\u0442\u0438 \u043F\u0435\u0440\u0435\u0440\u0438\u0432"));
+      var totalTime = timeforDist + timePause + 'год займе Ваша подорож';
+      return totalTime;
+    };
+
+    alert(timeTrip(distance));
+  };
+};
+
+exports.hw5 = hw5;
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -658,11 +818,14 @@ var _hw3 = require("./js/hw3");
 
 var _hw4 = require("./js/hw4");
 
+var _hw5 = require("./js/hw5");
+
 (0, _hw.hw1)();
 (0, _hw2.hw2)();
 (0, _hw3.hw3)();
 (0, _hw4.hw4)();
-},{"./js/hw1":"js/hw1.js","./js/hw2":"js/hw2.js","./js/hw3":"js/hw3.js","./js/hw4":"js/hw4.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _hw5.hw5)();
+},{"./js/hw1":"js/hw1.js","./js/hw2":"js/hw2.js","./js/hw3":"js/hw3.js","./js/hw4":"js/hw4.js","./js/hw5":"js/hw5.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -690,7 +853,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62429" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63071" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
